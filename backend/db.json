@@ -1,0 +1,116 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "usuario@gmail.com",
+      "name": "usuario",
+      "passwordHash": "$2b$10$aePLoLrFe24UyXQe0JClMefC4/k8jyrUsgNBI5OKJaHf2y/bGrtxW"
+    },
+    {
+      "id": 2,
+      "email": "admin@gmail.com",
+      "name": "admin",
+      "passwordHash": "$2b$10$Cogpy13OblVHxzHz.wIOle5H2.wGs2oEAES5UBJqalF0lMfj1BVRq"
+    }
+  ],
+  "games": [
+    {
+      "id": 1,
+      "title": "Catan",
+      "description": "Juego de estrategia donde los jugadores colonizan una isla, recolectan recursos y construyen asentamientos.",
+      "imageUrl": "https://cf.geekdo-images.com/W3Bsga_uLP9kO91gZ7H8yw__original/img/xV7oisd3RQ8R-k18cdWAYthHXsA=/0x0/filters:format(jpeg)/pic2419375.jpg",
+      "minPlayers": 3,
+      "maxPlayers": 4,
+      "playTime": 90,
+      "category": ["Estrategia", "Familiar"],
+      "rating": 4.5,
+      "userId": 1,
+      "createdAt": "2026-01-10T10:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "title": "Ticket to Ride",
+      "description": "Juego de aventuras en tren donde los jugadores construyen rutas ferroviarias a través del mapa.",
+      "imageUrl": "https://cf.geekdo-images.com/ZWJg0dCdrWHxVnc0eFXK8w__original/img/Peyh2AmN3u-i6xv-IW9PJC7mfGk=/0x0/filters:format(jpeg)/pic38668.jpg",
+      "minPlayers": 2,
+      "maxPlayers": 5,
+      "playTime": 60,
+      "category": ["Familiar", "Trenes"],
+      "rating": 4.3,
+      "userId": 1,
+      "createdAt": "2026-01-12T14:30:00.000Z"
+    },
+    {
+      "id": 3,
+      "title": "Carcassonne",
+      "description": "Juego de colocación de losetas donde los jugadores construyen ciudades, caminos y monasterios medievales.",
+      "imageUrl": "https://cf.geekdo-images.com/Z3upN53-fsVPUDimN9SpOA__original/img/NANj_B2mG2G2j01cOdx1lL2e1fY=/0x0/filters:format(jpeg)/pic2337577.jpg",
+      "minPlayers": 2,
+      "maxPlayers": 5,
+      "playTime": 45,
+      "category": ["Estrategia", "Medieval"],
+      "rating": 4.2,
+      "userId": 2,
+      "createdAt": "2026-01-15T09:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "title": "Pandemic",
+      "description": "Juego cooperativo donde los jugadores trabajan juntos para salvar al mundo de enfermedades mortales.",
+      "imageUrl": "https://cf.geekdo-images.com/S3ybV1LAp-8SnHIXLLjVqA__original/img/kIBu-2Ljb_ml5n-S8uIbE6ehGFc=/0x0/filters:format(jpeg)/pic1534148.jpg",
+      "minPlayers": 2,
+      "maxPlayers": 4,
+      "playTime": 60,
+      "category": ["Cooperativo", "Ciencia ficcion"],
+      "rating": 4.6,
+      "userId": 1,
+      "createdAt": "2026-01-18T16:45:00.000Z"
+    },
+    {
+      "id": 5,
+      "title": "Dixit",
+      "description": "Juego de creatividad y adivinanzas con hermosas ilustraciones artisticas.",
+      "imageUrl": "https://cf.geekdo-images.com/J4x4z2ETvaAl0qQ_tQyxCg__original/img/0Lq21xvdMBFNE8RhZ0M6b5OIpRQ=/0x0/filters:format(png)/pic6738341.png",
+      "minPlayers": 3,
+      "maxPlayers": 6,
+      "playTime": 30,
+      "category": ["Party", "Familiar"],
+      "rating": 4.1,
+      "userId": 2,
+      "createdAt": "2026-01-20T11:20:00.000Z"
+    },
+    {
+      "id": 6,
+      "title": "7 Wonders",
+      "description": "Juego de cartas donde los jugadores lideran civilizaciones antiguas y construyen maravillas arquitectonicas.",
+      "imageUrl": "https://cf.geekdo-images.com/RvFVTEpnbb4NM7k0IF8V7A__original/img/PpBwp27a3CIWuKIQNp8L_e1uBDI=/0x0/filters:format(jpeg)/pic3558929.jpg",
+      "minPlayers": 2,
+      "maxPlayers": 7,
+      "playTime": 30,
+      "category": ["Estrategia", "Civilizacion"],
+      "rating": 4.4,
+      "userId": 1,
+      "createdAt": "2026-01-25T08:15:00.000Z"
+    }
+  ],
+  "favorites": [
+    {
+      "id": 1,
+      "userId": 1,
+      "gameId": 1,
+      "addedAt": "2026-01-15T10:30:00.000Z"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "gameId": 4,
+      "addedAt": "2026-01-20T15:45:00.000Z"
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "gameId": 3,
+      "addedAt": "2026-01-18T09:00:00.000Z"
+    }
+  ]
+}

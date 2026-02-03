@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "usuario@gmail.com",
+      "name": "usuario",
+      "passwordHash": "$2b$10$aePLoLrFe24UyXQe0JClMefC4/k8jyrUsgNBI5OKJaHf2y/bGrtxW"
+    },
+    {
+      "id": 2,
+      "email": "admin@gmail.com",
+      "name": "admin",
+      "passwordHash": "$2b$10$Cogpy13OblVHxzHz.wIOle5H2.wGs2oEAES5UBJqalF0lMfj1BVRq"
+    }
+  ],
+  "games": [
+    {
+      "id": 1,
+      "title": "Catan",
+      "description": "Juego de estrategia donde los jugadores colonizan una isla.",
+      "imageUrl": "https://cf.geekdo-images.com/W3Bsga_uLP9kO91gZ7H8yw__original/img/xV7oisd3RQ8R-k18cdWAYthHXsA=/0x0/filters:format(jpeg)/pic2419375.jpg",
+      "minPlayers": 3,
+      "maxPlayers": 4,
+      "playTime": 90,
+      "category": ["Estrategia", "Familiar"],
+      "rating": 4.5,
+      "userId": 1,
+      "createdAt": "2026-01-10T10:00:00.000Z"
+    }
+  ],
+  "favorites": []
+}

@@ -1,0 +1,5 @@
+/* Importar todos los estilos */
+@import './variables.css';
+@import './layout.css';
+@import './auth.css';
+@import './juegos.css';

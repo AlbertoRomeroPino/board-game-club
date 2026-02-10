@@ -1,0 +1,101 @@
+/* Navbar principal */
+.navbar {
+  background-color: var(--surface-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow);
+}
+
+.navbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+.brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navlinks a {
+  color: var(--text-secondary);
+  font-weight: 500;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+  letter-spacing: 0.04em;
+}
+
+.navlinks a:hover {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.navlinks a.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+}
+
+.nav-username {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--surface-hover);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+}
+
+.username-message {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.username-name {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.nav-btn {
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+}
+
+.nav-btn.logout {
+  background-color: transparent;
+  color: var(--error-color);
+  border: 1px solid var(--error-color);
+}
+
+.nav-btn.logout:hover {
+  background-color: var(--error-color);
+  color: #f4e4bc;
+}
+
+/* Main content */
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}

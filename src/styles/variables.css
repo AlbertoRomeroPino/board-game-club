@@ -1,0 +1,73 @@
+/* Variables globales */
+:root {
+  --primary-color: #2d5a27;
+  --primary-hover: #1e3d1a;
+  --secondary-color: #a67c52;
+  --success-color: #2f6b3a;
+  --error-color: #c24141;
+  --warning-color: #d59a3a;
+  --background-color: #f4e4bc;
+  --surface-color: #faf3e0;
+  --surface-hover: #e6d2a7;
+  --text-primary: #4a3728;
+  --text-secondary: #6b563f;
+  --text-muted: #7a6348;
+  --border-color: #d4b982;
+  --border-radius: 6px;
+  --shadow: 0 6px 12px rgba(74, 55, 40, 0.16);
+  --shadow-lg: 0 12px 24px rgba(74, 55, 40, 0.22);
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Merriweather', 'Garamond', 'Georgia', serif;
+  background-color: var(--background-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  background-image: url('https://www.transparenttextures.com/patterns/paper.png');
+  background-repeat: repeat;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+/* Utilidades */
+.muted {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+/* Toast / Alertas */
+.toast {
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius);
+  margin-top: 1rem;
+  font-size: 0.875rem;
+}
+
+.toast.error {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: var(--error-color);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.toast.success {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: var(--success-color);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}

@@ -3,6 +3,7 @@ export type User = {
   email: string;
   name: string;
   password?: string; // No se envía desde el servidor normalmente
+  imagenUrl?: string;
 };
 
 // Usuario público (sin datos sensibles)

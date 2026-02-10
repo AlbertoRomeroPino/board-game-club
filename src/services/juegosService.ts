@@ -53,5 +53,13 @@ export const juegosService = {
     return http
       .put<BoardGame>(`${API_URL}/${updateBoardGame.id}`, updateBoardGame)
       .then((response) => response.data);
+  },
+
+  /**
+   * Elimina un juego de mesa por su ID.
+   * @param id ID del juego a eliminar
+   */
+  delete(id: number): Promise<void> {
+    return http.delete(`${API_URL}/${id}`).then(() => {});
   }
 };

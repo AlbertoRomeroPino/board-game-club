@@ -25,3 +25,4 @@ dist-ssr
 
 # Dependency directories
 .env.local
+backend/db.json

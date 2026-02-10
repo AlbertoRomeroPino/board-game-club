@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { juegosService } from "../services/juegosService";
 import type { BoardGame } from "../types/BoardGame";
+import JuegoCard from "../components/JuegoCard";
 
 const JuegosPage = () => {
   const [juegos, setJuegos] = useState<BoardGame[]>([]);
@@ -53,44 +54,9 @@ const JuegosPage = () => {
       </header>
 
       <div className="juegos-grid">
-        {juegos.map((juego) => (
-          <article key={juego.id} className="juego-card">
-            <div className="juego-card__image-container">
-              <img 
-                src={juego.imageUrl} 
-                alt={juego.title} 
-                className="juego-card__image"
-              />
-              <span className="juego-card__rating">
-                ⭐ {juego.rating}
-              </span>
-            </div>
-            
-            <div className="juego-card__content">
-              <h2 className="juego-card__title">{juego.title}</h2>
-              <p className="juego-card__description">{juego.description}</p>
-              
-              <div className="juego-card__details">
-                <span className="juego-card__detail">
-                  <span className="juego-card__detail-icon">👥</span>
-                  {juego.minPlayers} - {juego.maxPlayers}
-                </span>
-                <span className="juego-card__detail">
-                  <span className="juego-card__detail-icon">⏱️</span>
-                  {juego.playTime} min
-                </span>
-              </div>
-
-              <div className="juego-card__categories">
-                {juego.category.map((cat) => (
-                  <span key={cat} className="juego-card__category">
-                    {cat}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </article>
-        ))}
+         {juegos.map((juego) => (
+        <JuegoCard juego={juego}/>
+         ))}
       </div>
     </div>
   );

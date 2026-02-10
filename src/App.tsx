@@ -8,6 +8,9 @@ import { ProtectedRoute, GuestRoute } from './components/ProtectedRoute';
 import PerfilPage from './pages/PerfilPage';
 import JuegosPage from './pages/JuegosPage';
 import MisJuegos from './pages/MisJuegos';
+import JuegoDetalles from './pages/JuegoDetalles';
+import FavoritosPage from './pages/FavoritosPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
   return (
@@ -28,14 +31,15 @@ function App() {
         <Route element={<AppLayout />}>
           <Route path="/juegos" element={<JuegosPage />} />
           <Route path="/mis-juegos" element={<MisJuegos />} />
-          <Route path="/favoritos" element={<div>Favoritos (TODO)</div>} />
+          <Route path="/mis-juegos/:id" element={<JuegoDetalles />} />
+          <Route path="/favoritos" element={<FavoritosPage />} />
           <Route path="/perfil" element={<PerfilPage />} />
         </Route>
       </Route>
 
       {/* Redirección por defecto */}
       <Route index element={<Navigate to="/inicio" replace />} />
-      <Route path="*" element={<Navigate to="/inicio" replace />} />
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
 }

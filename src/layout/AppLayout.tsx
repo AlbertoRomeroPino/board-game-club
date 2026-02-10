@@ -10,6 +10,7 @@ export default function AppLayout() {
         <div className="navbar-inner">
           <span className="brand">🎲 Board Game Club</span>
           <nav className="navlinks">
+            <NavLink to="/inicio">Inicio</NavLink>
             <NavLink to="/juegos">Juegos</NavLink>
             {isAuthenticated && user && (
               <NavLink to="/mis-juegos">Mis Juegos</NavLink>

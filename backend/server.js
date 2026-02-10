@@ -118,26 +118,9 @@ app.get("/autenticacion/yo", authRequired, (req, res) => {
   });
 });
 
-// --- USUARIOS endpoints (protegidos) ---
-// GET /usuarios - obtener todos los usuarios (datos publicos)
-app.get("/usuarios", authRequired, (req, res) => {
-  const users = db.get("users").value();
-  const publicUsers = users.map(user => ({
-    id: user.id,
-    name: user.name,
-    email: user.email
-  }));
-  return res.json(publicUsers);
-});
 
-// GET /usuarios/:id - obtener un usuario (datos publicos)
-app.get("/usuarios/:id", authRequired, (req, res) => {
-  const id = Number(req.params.id);
-  const user = db.get("users").find({ id }).value();
-  if (!user) return res.status(404).json({ message: "Usuario no encontrado" });
 
-  return res.json({ id: user.id, name: user.name, email: user.email });
-});
+
 
 // POST /usuarios - crear usuario
 app.post("/usuarios", authRequired, async (req, res) => {
@@ -338,33 +321,7 @@ app.put("/juegos/:id", authRequired, (req, res) => {
   return res.json(updated);
 });
 
-// PATCH /juegos/:id - actualizar parcialmente un juego (requiere autenticación)
-app.patch("/juegos/:id", authRequired, (req, res) => {
-  const id = Number(req.params.id);
-  const game = db.get("games").find({ id }).value();
 
-  if (!game) {
-    return res.status(404).json({ message: "Juego no encontrado" });
-  }
-
-  const patch = {};
-  
-  if (req.body?.title !== undefined) {
-    const t = String(req.body.title).trim();
-    if (!t) return res.status(400).json({ message: "title no puede estar vacío" });
-    patch.title = t;
-  }
-  if (req.body?.description !== undefined) patch.description = String(req.body.description).trim();
-  if (req.body?.imageUrl !== undefined) patch.imageUrl = String(req.body.imageUrl).trim();
-  if (req.body?.minPlayers !== undefined) patch.minPlayers = Number(req.body.minPlayers);
-  if (req.body?.maxPlayers !== undefined) patch.maxPlayers = Number(req.body.maxPlayers);
-  if (req.body?.playTime !== undefined) patch.playTime = Number(req.body.playTime);
-  if (req.body?.category !== undefined) patch.category = Array.isArray(req.body.category) ? req.body.category : [];
-  if (req.body?.rating !== undefined) patch.rating = Number(req.body.rating);
-
-  const updated = db.get("games").find({ id }).assign(patch).write();
-  return res.json(updated);
-});
 
 // DELETE /juegos/:id - eliminar un juego (requiere autenticación)
 app.delete("/juegos/:id", authRequired, (req, res) => {

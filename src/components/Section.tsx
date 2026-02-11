@@ -1,15 +1,15 @@
 import React from 'react'
 
-type SeccionVariant = 'tan' | 'forest' | 'wood' | 'crimson'
+type SectionVariant = 'tan' | 'forest' | 'wood' | 'crimson'
 
-type SeccionProps = {
+type SectionProps = {
   title: string
   text: string
   icon: React.ComponentType<{ size?: number }>
-  variant?: SeccionVariant
+  variant?: SectionVariant
 }
 
-const Seccion: React.FC<SeccionProps> = ({
+const Section: React.FC<SectionProps> = ({
   title,
   text,
   icon: Icon,
@@ -31,4 +31,4 @@ const Seccion: React.FC<SeccionProps> = ({
   )
 }
 
-export default Seccion
+export default Section

@@ -3,7 +3,7 @@ import type { BoardGame } from "../types/BoardGame";
 
 const API_URL = "/juegos";
 
-export const juegosService = {
+export const gamesService = {
   /**
    * Obtiene un juego por su ID.
    * @param id ID del juego a obtener

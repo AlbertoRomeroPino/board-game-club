@@ -2,4 +2,7 @@
 @import './variables.css';
 @import './layout.css';
 @import './auth.css';
-@import './juegos.css';
+@import './games.css';
+@import './home.css';
+@import './profile.css';
+@import './notfound.css';

@@ -1,20 +1,24 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import { juegosService } from "../services/juegosService";
-import JuegosForm from "../components/JuegosForm";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { gamesService } from "../services/gamesService";
+import GameForm from "../components/GameForm";
 import type { BoardGame, CreateBoardGame } from "../types/BoardGame";
 
-const JuegoDetalles = () => {
+const GameDetailsPage = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const location = useLocation();
   const [juego, setJuego] = useState<BoardGame | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [modoEdicion, setModoEdicion] = useState(false);
 
+  // Determinar si es propietario basado en la ruta
+  const isOwner = location.pathname.startsWith('/mis-juegos');
+
   useEffect(() => {
     if (id) {
-      juegosService
+      gamesService
         .get(Number(id))
         .then((data) => setJuego(data))
         .catch((err) => {
@@ -33,7 +37,7 @@ const JuegoDetalles = () => {
       userId: juego.userId,
       createdAt: juego.createdAt,
     };
-    juegosService
+    gamesService
       .update(juegoCompleto)
       .then((actualizado) => {
         setJuego(actualizado);
@@ -54,7 +58,7 @@ const JuegoDetalles = () => {
       return;
 
     setIsLoading(true);
-    juegosService
+    gamesService
       .delete(Number(id))
       .then(() => {
         navigate("/mis-juegos");
@@ -86,7 +90,7 @@ const JuegoDetalles = () => {
             Cancelar
           </button>
         </header>
-        <JuegosForm
+        <GameForm
           onSubmit={handleSubmit}
           isLoading={isLoading}
           initialData={juego}
@@ -101,7 +105,7 @@ const JuegoDetalles = () => {
         <h1 className="juegos-title">Detalles del Juego</h1>
         <button
           className="btn-secondary"
-          onClick={() => navigate("/mis-juegos")}
+          onClick={() => navigate(-1)}
         >
           Volver
         </button>
@@ -149,26 +153,28 @@ const JuegoDetalles = () => {
             </div>
           </div>
 
-          <div className="juego-detalles__acciones">
-            <button
-              className="btn-primary"
-              onClick={() => setModoEdicion(true)}
-              disabled={isLoading}
-            >
-              Editar
-            </button>
-            <button
-              className="btn-danger"
-              onClick={handleDelete}
-              disabled={isLoading}
-            >
-              {isLoading ? "Eliminando..." : "Eliminar"}
-            </button>
-          </div>
+          {isOwner && (
+            <div className="juego-detalles__acciones">
+              <button
+                className="btn-primary"
+                onClick={() => setModoEdicion(true)}
+                disabled={isLoading}
+              >
+                Editar
+              </button>
+              <button
+                className="btn-danger"
+                onClick={handleDelete}
+                disabled={isLoading}
+              >
+                {isLoading ? "Eliminando..." : "Eliminar"}
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>
   );
 };
 
-export default JuegoDetalles;
+export default GameDetailsPage;

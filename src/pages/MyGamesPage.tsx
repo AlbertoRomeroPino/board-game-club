@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import type { BoardGame, CreateBoardGame } from "../types/BoardGame";
-import { juegosService } from "../services/juegosService";
-import JuegoCard from "../components/JuegoCard";
-import JuegosForm from "../components/JuegosForm";
+import { gamesService } from "../services/gamesService";
+import GameCard from "../components/GameCard";
+import GameForm from "../components/GameForm";
 
-const MisJuegos = () => {
+const MyGamesPage = () => {
   const [misJuegos, setMisJuegos] = useState<BoardGame[]>([]);
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -12,7 +12,7 @@ const MisJuegos = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    juegosService
+    gamesService
       .getAllByUser()
       .then((juegos) => setMisJuegos(juegos))
       .catch((err) => {
@@ -24,7 +24,7 @@ const MisJuegos = () => {
 
   const handleAgregarJuego = (nuevoJuego: CreateBoardGame) => {
     setIsLoading(true);
-    juegosService
+    gamesService
       .create(nuevoJuego as BoardGame)
       .then((juegoCreado) => {
         setMisJuegos((prev) => [...prev, juegoCreado]);
@@ -60,13 +60,13 @@ const MisJuegos = () => {
       {error && <p className="error-message">{error}</p>}
 
       {mostrarFormulario ? (
-        <JuegosForm onSubmit={handleAgregarJuego} isLoading={isLoading} />
+        <GameForm onSubmit={handleAgregarJuego} isLoading={isLoading} />
       ) : misJuegos.length === 0 ? (
         <p className="empty-state">No tienes juegos aún. ¡Añade tu primer juego!</p>
       ) : (
         <div className="juegos-grid">
           {misJuegos.map((juego) => (
-            <JuegoCard key={juego.id} juego={juego} clickable />
+            <GameCard key={juego.id} juego={juego} isOwner />
           ))}
         </div>
       )}
@@ -74,4 +74,4 @@ const MisJuegos = () => {
   );
 };
 
-export default MisJuegos;
+export default MyGamesPage;

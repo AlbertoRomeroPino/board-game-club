@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { CreateBoardGame } from "../types/BoardGame";
 
-interface JuegosFormProps {
+interface GameFormProps {
   onSubmit: (juego: CreateBoardGame) => void;
   initialData?: Partial<CreateBoardGame>;
   isLoading?: boolean;
@@ -20,7 +20,7 @@ const CATEGORIAS_DISPONIBLES = [
   "Ameritrash",
 ];
 
-const JuegosForm = ({ onSubmit, initialData, isLoading = false }: JuegosFormProps) => {
+const GameForm = ({ onSubmit, initialData, isLoading = false }: GameFormProps) => {
   const [formData, setFormData] = useState<CreateBoardGame>({
     title: initialData?.title ?? "",
     description: initialData?.description ?? "",
@@ -179,4 +179,4 @@ const JuegosForm = ({ onSubmit, initialData, isLoading = false }: JuegosFormProp
   );
 };
 
-export default JuegosForm;
+export default GameForm;

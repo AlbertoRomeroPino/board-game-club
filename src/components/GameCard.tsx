@@ -1,25 +1,27 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import type { BoardGame } from '../types/BoardGame';
-import { useFavoritos } from '../context/FavoritosContext';
+import { useFavorites } from '../context/FavoritesContext';
 
-interface JuegoCardProps {
+interface GameCardProps {
     juego: BoardGame;
-    clickable?: boolean;
+    isOwner?: boolean;
     showFavoriteButton?: boolean;
 }
 
 
-const JuegoCard = ({ juego, clickable = false, showFavoriteButton = true }: JuegoCardProps) => {
+const GameCard = ({ juego, isOwner = false, showFavoriteButton = true }: GameCardProps) => {
   const navigate = useNavigate();
-  const { isFavorite, toggleFavorite } = useFavoritos();
+  const { isFavorite, toggleFavorite } = useFavorites();
   const [isToggling, setIsToggling] = useState(false);
 
   const esFavorito = isFavorite(juego.id);
 
   const handleClick = () => {
-    if (clickable) {
+    if (isOwner) {
       navigate(`/mis-juegos/${juego.id}`);
+    } else {
+      navigate(`/juegos/${juego.id}`);
     }
   };
 
@@ -38,7 +40,7 @@ const JuegoCard = ({ juego, clickable = false, showFavoriteButton = true }: Jueg
   };
 
   return (
-    <div onClick={handleClick} style={{ cursor: clickable ? 'pointer' : 'default' }}>
+    <div onClick={handleClick} style={{ cursor: 'pointer' }}>
      
           <article key={juego.id} className="juego-card">
             <div className="juego-card__image-container">
@@ -91,4 +93,4 @@ const JuegoCard = ({ juego, clickable = false, showFavoriteButton = true }: Jueg
   )
 }
 
-export default JuegoCard
+export default GameCard

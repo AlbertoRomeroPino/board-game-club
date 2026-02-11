@@ -9,6 +9,27 @@
   border: 1px solid var(--border-color);
 }
 
+/* Back button */
+.back-home-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 1rem;
+  background: var(--surface-color);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.back-home-button:hover {
+  background: var(--primary-color);
+  color: #f4e4bc;
+  border-color: var(--primary-color);
+}
+
 .card h1 {
   font-size: 1.75rem;
   margin-bottom: 0.5rem;

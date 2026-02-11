@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { authService } from '../services/auth';
+import { authService } from '../services/authService';
 import type { RegisterData } from '../types/User';
 
 export const RegisterForm = () => {

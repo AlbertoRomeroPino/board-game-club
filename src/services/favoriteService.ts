@@ -3,7 +3,7 @@ import { http } from "./http";
 
 const API_URL = "/favoritos";
 
-export const favoritoService = {
+export const favoriteService = {
   /**
    * Obtiene todos los favoritos del usuario autenticado con los datos del juego.
    */

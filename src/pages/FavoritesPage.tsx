@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
-import { favoritoService } from '../services/favoritoService';
+import { favoriteService } from '../services/favoriteService';
 import type { FavoriteWithGame } from '../types/Favorite';
-import JuegoCard from '../components/JuegoCard';
-import { useFavoritos } from '../context/FavoritosContext';
+import GameCard from '../components/GameCard';
+import { useFavorites } from '../context/FavoritesContext';
 
-const FavoritosPage = () => {
+const FavoritesPage = () => {
   const [favoritos, setFavoritos] = useState<FavoriteWithGame[]>([]);
   const [cargando, setCargando] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const { favoriteIds } = useFavoritos();
+  const { favoriteIds } = useFavorites();
 
   useEffect(() => {
-    favoritoService
+    favoriteService
       .getAll()
       .then((data) => setFavoritos(data))
       .catch((err) => {
@@ -42,7 +42,7 @@ const FavoritosPage = () => {
         <div className="juegos-grid">
           {favoritosActuales.map((favorito) =>
             favorito.game ? (
-              <JuegoCard key={favorito.id} juego={favorito.game} />
+              <GameCard key={favorito.id} juego={favorito.game} />
             ) : null
           )}
         </div>
@@ -51,4 +51,4 @@ const FavoritosPage = () => {
   );
 };
 
-export default FavoritosPage;
+export default FavoritesPage;

@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
-import { juegosService } from "../services/juegosService";
+import { gamesService } from "../services/gamesService";
 import type { BoardGame } from "../types/BoardGame";
-import JuegoCard from "../components/JuegoCard";
+import GameCard from "../components/GameCard";
 
-const JuegosPage = () => {
+const GamesPage = () => {
   const [juegos, setJuegos] = useState<BoardGame[]>([]);
   const [cargando, setCargando] = useState(true);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    juegosService
+    gamesService
       .getAll()
       .then((listaJuegos) => setJuegos(listaJuegos))
       .catch((respuestaErronea) => {
@@ -55,11 +55,11 @@ const JuegosPage = () => {
 
       <div className="juegos-grid">
          {juegos.map((juego) => (
-        <JuegoCard juego={juego}/>
+        <GameCard juego={juego}/>
          ))}
       </div>
     </div>
   );
 };
 
-export default JuegosPage;
+export default GamesPage;

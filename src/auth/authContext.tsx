@@ -1,4 +1,4 @@
-import { createContext, useContext, useMemo, useState } from "react";
+import { createContext, useCallback, useContext, useMemo, useState } from "react";
 import type { AuthSession, User } from "../types/User";
 import { authStorage } from "./authStorage";
 
@@ -8,6 +8,7 @@ type AuthContextValue = {
   isAuthenticated: boolean;
   login: (session: AuthSession) => void;
   logout: () => void;
+  updateUser: (userData: Partial<User>) => void;
 };
 
 const AuthContext = createContext<AuthContextValue | undefined>(undefined);
@@ -30,6 +31,22 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setToken(null);
   }
 
+  const updateUser = useCallback((userData: Partial<User>) => {
+    setUser((currentUser) => {
+      if (currentUser) {
+        const updatedUser = { ...currentUser, ...userData };
+        setToken((currentToken) => {
+          if (currentToken) {
+            authStorage.set({ token: currentToken, user: updatedUser });
+          }
+          return currentToken;
+        });
+        return updatedUser;
+      }
+      return currentUser;
+    });
+  }, []);
+
   const value = useMemo<AuthContextValue>(
     () => ({
       user,
@@ -37,8 +54,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       isAuthenticated: Boolean(user && token),
       login,
       logout,
+      updateUser,
     }),
-    [user, token]
+    [user, token, updateUser]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

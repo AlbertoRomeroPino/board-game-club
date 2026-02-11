@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import ButtonBackInicio from "../components/ButtonBackInicio";
+import ButtonBackInicio from "../components/BackHomeButton";
 
 export default function AuthLayout() {
   return (

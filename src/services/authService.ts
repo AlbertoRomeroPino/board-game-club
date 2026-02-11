@@ -26,4 +26,13 @@ export const authService = {
     });
     return response.data;
   },
+
+  async updateUser(userId: number, data: Partial<Pick<User, 'name' | 'imagenUrl'>>, token: string): Promise<User> {
+    const response = await axios.patch<User>(
+      `${API_BASE_URL}/usuarios/${userId}`,
+      data,
+      { headers: { Authorization: `Bearer ${token}` } }
+    );
+    return response.data;
+  },
 };

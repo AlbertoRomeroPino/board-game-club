@@ -1,0 +1,207 @@
+.perfil-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--color-surface);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.perfil-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border, #e0e0e0);
+}
+
+.perfil-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--color-primary, #6366f1);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.perfil-nombre {
+  font-size: 1.75rem;
+  color: var(--color-text-primary, #1f2937);
+  margin: 0;
+  text-align: center;
+}
+
+.perfil-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.perfil-info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--color-background, #f9fafb);
+  border-radius: 10px;
+}
+
+.perfil-info-icon {
+  font-size: 1.25rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary, #6366f1);
+  color: white;
+  border-radius: 50%;
+}
+
+.perfil-info-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.perfil-info-label {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary, #6b7280);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.perfil-info-value {
+  font-size: 1rem;
+  color: var(--color-text-primary, #1f2937);
+  font-weight: 500;
+}
+
+.perfil-actions {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.perfil-btn-editar {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background: var(--color-primary, #6366f1);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.perfil-btn-editar:hover {
+  background: var(--color-primary-hover, #4f46e5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+}
+
+/* Formulario de edición */
+.perfil-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.perfil-form-title {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--color-text-primary, #1f2937);
+  margin: 0;
+}
+
+.perfil-form-error {
+  background: #fef2f2;
+  color: #dc2626;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  text-align: center;
+  margin: 0;
+}
+
+.perfil-form-preview {
+  display: flex;
+  justify-content: center;
+}
+
+.perfil-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.perfil-form-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-secondary, #6b7280);
+}
+
+.perfil-form-group input {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 2px solid var(--color-border, #e5e7eb);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.perfil-form-group input:focus {
+  outline: none;
+  border-color: var(--color-primary, #6366f1);
+}
+
+.perfil-form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.perfil-btn-cancelar {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-secondary, #6b7280);
+  background: var(--color-background, #f9fafb);
+  border: 2px solid var(--color-border, #e5e7eb);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.perfil-btn-cancelar:hover:not(:disabled) {
+  background: var(--color-surface, #fff);
+  border-color: var(--color-text-secondary, #6b7280);
+}
+
+.perfil-btn-guardar {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background: #10b981;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.perfil-btn-guardar:hover:not(:disabled) {
+  background: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.perfil-btn-cancelar:disabled,
+.perfil-btn-guardar:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

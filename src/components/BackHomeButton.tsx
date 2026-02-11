@@ -1,15 +1,15 @@
 import { useNavigate } from 'react-router-dom'
 import { ChevronLeft } from 'lucide-react'
 
-const ButtonBackInicio = () => {
+const BackHomeButton = () => {
   const navigate = useNavigate()
 
   return (
-    <button className="button-back-inicio" onClick={() => navigate('/')}>
+    <button className="back-home-button" onClick={() => navigate('/')}>
       <ChevronLeft size={20} />
-      Volver al Inicio
+      Back to Home
     </button>
   )
 }
 
-export default ButtonBackInicio
+export default BackHomeButton

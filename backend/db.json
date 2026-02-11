@@ -430,7 +430,7 @@
       "id": 21,
       "title": "Beast",
       "description": "Juego de 3 jugadores contra 1 monstruo(tambien jugador) el monstruo tiene que matar a 3 personas para ganar y los cazadores tienen que cazarlo.",
-      "imageUrl": "https://www.google.com/imgres?q=beast%20game%20board&imgurl=https%3A%2F%2Fwww.somosjuegos.com%2Fwp-content%2Fuploads%2F2023%2F09%2Fbeast.jpg&imgrefurl=https%3A%2F%2Fwww.somosjuegos.com%2Fproducto%2Fbeast-edicion-revisada%2F&docid=eEftrXWYojNDQM&tbnid=ng5Oj_arK7QMnM&vet=12ahUKEwic9a2khM-SAxWtVaQEHTQPL1UQnPAOegQIFxAB..i&w=1000&h=1000&hcb=2&ved=2ahUKEwic9a2khM-SAxWtVaQEHTQPL1UQnPAOegQIFxAB",
+      "imageUrl": "https://www.somosjuegos.com/wp-content/uploads/2023/09/beast.jpg",
       "minPlayers": 2,
       "maxPlayers": 4,
       "playTime": 60,
@@ -475,12 +475,6 @@
       "addedAt": "2026-01-29T11:00:00.000Z"
     },
     {
-      "id": 6,
-      "userId": 5,
-      "gameId": 8,
-      "addedAt": "2026-01-30T16:00:00.000Z"
-    },
-    {
       "id": 7,
       "userId": 6,
       "gameId": 11,
@@ -511,12 +505,6 @@
       "addedAt": "2026-02-10T18:33:02.852Z"
     },
     {
-      "id": 13,
-      "userId": 5,
-      "gameId": 5,
-      "addedAt": "2026-02-10T18:33:04.465Z"
-    },
-    {
       "id": 14,
       "userId": 5,
       "gameId": 4,
@@ -527,6 +515,18 @@
       "userId": 5,
       "gameId": 3,
       "addedAt": "2026-02-10T18:33:07.684Z"
+    },
+    {
+      "id": 16,
+      "userId": 5,
+      "gameId": 1,
+      "addedAt": "2026-02-11T12:57:46.384Z"
+    },
+    {
+      "id": 17,
+      "userId": 5,
+      "gameId": 21,
+      "addedAt": "2026-02-11T12:57:47.787Z"
     }
   ]
 }

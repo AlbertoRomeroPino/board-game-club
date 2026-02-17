@@ -130,7 +130,7 @@ export default function RegisterPage() {
       {error && <div className="toast error">{error}</div>}
 
       <p className="muted" style={{ marginTop: "1rem" }}>
-        ¿Ya tienes cuenta? <Link to="/login">Inicia sesión</Link>
+        ¿Ya tienes cuenta? <Link to="/iniciar-sesion">Inicia sesión</Link>
       </p>
     </section>
   );

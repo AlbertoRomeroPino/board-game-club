@@ -27,7 +27,7 @@
     {
       "id": 5,
       "email": "alropi2004@hotmail.com",
-      "name": "alberto",
+      "name": "alberto1",
       "passwordHash": "$2b$10$TBRwQ7e5b2Qg7L63gnGzhOI8EjVfW3vxlNU7q7bp4rzUatVNYfGtu"
     },
     {
@@ -119,6 +119,12 @@
       "email": "beatriz.f@gmail.com",
       "name": "bea_f",
       "passwordHash": "$2b$10$L2y6g..."
+    },
+    {
+      "id": 21,
+      "email": "rafa@gmail.com",
+      "name": "Rafael",
+      "passwordHash": "$2b$10$JLAB/zDAJ4iBDI0OjWVmZuY/CEt12X7jv9mCewNcBVvYKQtlhWwmS"
     }
   ],
   "games": [
@@ -425,22 +431,6 @@
       "rating": 4,
       "userId": 15,
       "createdAt": "2026-02-10T09:00:00.000Z"
-    },
-    {
-      "id": 21,
-      "title": "Beast",
-      "description": "Juego de 3 jugadores contra 1 monstruo(tambien jugador) el monstruo tiene que matar a 3 personas para ganar y los cazadores tienen que cazarlo.",
-      "imageUrl": "https://www.somosjuegos.com/wp-content/uploads/2023/09/beast.jpg",
-      "minPlayers": 2,
-      "maxPlayers": 4,
-      "playTime": 60,
-      "category": [
-        "Cooperativo",
-        "Estrategia"
-      ],
-      "rating": 3.6,
-      "userId": 5,
-      "createdAt": "2026-02-10T13:31:16.316Z"
     }
   ],
   "favorites": [
@@ -527,6 +517,18 @@
       "userId": 5,
       "gameId": 21,
       "addedAt": "2026-02-11T12:57:47.787Z"
+    },
+    {
+      "id": 18,
+      "userId": 21,
+      "gameId": 21,
+      "addedAt": "2026-02-17T12:15:53.880Z"
+    },
+    {
+      "id": 19,
+      "userId": 21,
+      "gameId": 5,
+      "addedAt": "2026-02-17T12:16:28.728Z"
     }
   ]
 }

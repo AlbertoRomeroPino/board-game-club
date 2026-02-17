@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useAuth } from '../auth/authContext';
 import { authService } from '../services/authService';
+import {sileo} from 'sileo';
+
 import '../styles/profile.css';
 
 type ProfileFormProps = {
@@ -13,25 +15,30 @@ const ProfileForm = ({ onCancel, onSave }: ProfileFormProps) => {
   const [name, setName] = useState(user?.name ?? '');
   const [imagenUrl, setImagenUrl] = useState(user?.imagenUrl ?? '');
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!user || !token) return;
 
     setLoading(true);
-    setError(null);
+
+    const updatePromise = authService.updateUser(
+      user.id,
+      { name, imagenUrl },
+      token
+    );
+
+    sileo.promise(updatePromise, {
+      loading: { title: "Guardando cambios..." },
+      success: { title: "Perfil actualizado correctamente" },
+      error: { title: "Error al actualizar el perfil" },
+    });
 
     try {
-      const updatedUser = await authService.updateUser(
-        user.id,
-        { name, imagenUrl },
-        token
-      );
+      const updatedUser = await updatePromise;
       updateUser(updatedUser);
       onSave();
     } catch (err) {
-      setError('Error al actualizar el perfil');
       console.error(err);
     } finally {
       setLoading(false);
@@ -41,8 +48,6 @@ const ProfileForm = ({ onCancel, onSave }: ProfileFormProps) => {
   return (
     <form className="perfil-form" onSubmit={handleSubmit}>
       <h2 className="perfil-form-title">Editar perfil</h2>
-      
-      {error && <p className="perfil-form-error">{error}</p>}
 
       <div className="perfil-form-preview">
         <img 

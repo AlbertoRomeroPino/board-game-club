@@ -55,7 +55,7 @@ const GamesPage = () => {
 
       <div className="juegos-grid">
          {juegos.map((juego) => (
-        <GameCard juego={juego}/>
+        <GameCard key={juego.id} juego={juego}/>
          ))}
       </div>
     </div>
